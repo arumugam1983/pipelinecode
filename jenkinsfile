@@ -11,7 +11,7 @@ echo "Building maser"
 }
 stage('Build dev'){
 when{
-branch 'dev'
+branch 'dev1'
 }
 steps {
 echo 'Building dev'
