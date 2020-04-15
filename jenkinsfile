@@ -1,22 +1,23 @@
 pipeline {
-agent any
-stages {
-stage('Build master'){
-when{
-branch 'master'
+    agent any
+    stages {
+        stage('Build Master') {
+           
+            when {
+               branch 'master'
+            }
+            steps {
+                echo 'Building master'
+            }
+        }
+		
+		stage('Build Dev'){
+		when {
+		branch 'dev'
+		}
+		steps {
+		echo 'Building dev'
+		}
+		}
+    }
 }
-steps {
-echo "Building maser"
-}
-}
-stage('Build dev'){
-when{
-branch 'dev1'
-}
-steps {
-echo 'Building dev'
-}
-}
-}
-}
-
