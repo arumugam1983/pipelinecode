@@ -1,42 +1,16 @@
 pipeline {
-
-agent any
-
-stages {
-
-stage('Build master'){
-
-when{
-
-branch 'master'
-
+    agent any
+    stages {
+        stage('Build') {
+           
+            when {
+             
+			 changelog '.*some_text.*'
+            }
+            steps {
+                echo 'Hello World changelog'
+            }
+        }		
+		
+    }
 }
-
-steps {
-
-echo "Building maser"
-
-}
-
-}
-
-stage('Build dev'){
-
-when{
-
-branch 'dev1'
-
-}
-
-steps {
-
-echo 'Building dev'
-
-}
-
-}
-
-}
-
-}
-
